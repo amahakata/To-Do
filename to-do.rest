@@ -1,0 +1,47 @@
+### GET home /
+
+GET http://localhost:5000
+
+### Register User
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username":"Thomas",
+    "password":"Anderson"
+}
+### Login User
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "username":"Thomas",
+    "password":"Anderson"
+}
+
+### GET TODOS (protected)
+GET http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1NDI2Mjk2LCJleHAiOjE3NDU1MTI2OTZ9.CwKy3Yc55cexvGtbG2Ptzt8G5TPHq5GgvOVncETRIcE
+
+### POST a TODO (protected)
+POST http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1NDI2Mjk2LCJleHAiOjE3NDU1MTI2OTZ9.CwKy3Yc55cexvGtbG2Ptzt8G5TPHq5GgvOVncETRIcE
+Content-Type: application/json
+
+{
+    "task" : "Learn NodeJs well"
+}
+
+### PUT a TODO task (protected)
+PUT http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1NDI2Mjk2LCJleHAiOjE3NDU1MTI2OTZ9.CwKy3Yc55cexvGtbG2Ptzt8G5TPHq5GgvOVncETRIcE
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+
+### DELETE a TODO task (protected)
+DELETE http://localhost:5000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ1NDI2Mjk2LCJleHAiOjE3NDU1MTI2OTZ9.CwKy3Yc55cexvGtbG2Ptzt8G5TPHq5GgvOVncETRIcE
